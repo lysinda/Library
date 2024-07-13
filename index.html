@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+
+<body>
+    <nav id="header-nav">
+        <div class="center-content header">
+            <div class="logo-container">
+                Library
+            </div>
+            <button id="new-book">New Book</button>
+        </div>
+    </nav>
+    <div class="page-container">
+        <div class="sidebar"></div>
+        <div class="center-content">
+            <div class="library">
+                <div class="grid-header grid-template">
+                    <div class="order-num">#</div>
+                    <div>Genre</div>
+                    <div>Title</div>
+                    <div>Author</div>
+                    <div class="center-items">Pages</div>
+                    <div class="center-items">Read</div>
+                    <div class="center-items">Delete</div>
+                </div>
+            </div>
+            <dialog class="add-book-dialog">
+                <div class="dialog-header">
+                    <div class="dialog-title">Add new book</div>
+                    <button class="close-button">&times;</button>
+                </div>
+                <div class="dialog-body">
+                    <form id="new-book-form" action="" method="post">
+                        <div class="form-container">
+                            <div class="dialog-book-title">
+                                <input name="main-title" class="main-title" placeholder="Title" required>
+                            </div>
+                            <div class="dialog-book-subtitle">
+                                <input name="subtitle" class="subtitle" placeholder="Subtitle / Series (optional)">
+                            </div>
+                            <div class="dialog-genre">
+                                <img src="images/book.png">
+                                <select name="genre" class="genre" required>
+                                    <option value="" disabled selected hidden>Select Genre</option>
+                                    <option value="children">Children</option>
+                                    <option value="comedy">Comedy</option>
+                                    <option value="fantasy">Fantasy</option>
+                                    <option value="historic">Historic</option>
+                                    <option value="horror">Horror / Thriller</option>
+                                    <option value="mystery">Mystery</option>
+                                    <option value="romance">Romance</option>
+                                    <option value="sci-fi">Sci-Fi</option>
+                                    <option value="self-help">Self-Help / Wellness</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="dialog-author">
+                                <input name="author" class="author" placeholder="Author" required>
+                            </div>
+                            <div class="dialog-pages">
+                                <input name="pages" class="pages" placeholder="Pages" type="number" required>
+                            </div>
+                            <div class="dialog-read">
+                                Read it?
+                                <input name="read" class="read" type="checkbox">
+                            </div>
+                            <div class="dialog-save-button">
+                                <button class="save-button close-button" type="submit">SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+            <dialog class="edit-book-dialog">
+                <div class="dialog-header">
+                    <div class="dialog-title">Edit book details</div>
+                    <button class="close-button">&times;</button>
+                </div>
+                <div class="dialog-body">
+                    <form id="edit-book-form" action="" method="post">
+                        <div class="form-container">
+                            <div class="dialog-book-title">
+                                <input name="main-title" class="main-title" placeholder="Title" required>
+                            </div>
+                            <div class="dialog-book-subtitle">
+                                <input name="subtitle" class="subtitle" placeholder="Subtitle / Series (optional)">
+                            </div>
+                            <div class="dialog-genre">
+                                <img src="images/book.png">
+                                <select name="genre" class="genre" required>
+                                    <option value="" disabled selected hidden>Select Genre</option>
+                                    <option value="children">Children</option>
+                                    <option value="comedy">Comedy</option>
+                                    <option value="fantasy">Fantasy</option>
+                                    <option value="historic">Historic</option>
+                                    <option value="horror">Horror / Thriller</option>
+                                    <option value="mystery">Mystery</option>
+                                    <option value="romance">Romance</option>
+                                    <option value="sci-fi">Sci-Fi</option>
+                                    <option value="self-help">Self-Help / Wellness</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="dialog-author">
+                                <input name="author" class="author" placeholder="Author" required>
+                            </div>
+                            <div class="dialog-pages">
+                                <input name="pages" class="pages" placeholder="Pages" type="number" required>
+                            </div>
+                            <div class="dialog-read">
+                                Read it?
+                                <input name="read" class="read" type="checkbox">
+                            </div>
+                            <div class="dialog-save-button">
+                                <button class="save-button" type="submit">SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+            <dialog class="delete-dialog">
+                <div class="dialog-header">
+                    <div class="dialog-title">Are you sure you want to delete the following book?</div>
+                    <button class="close-button">&times;</button>
+                </div>
+                <div class="dialog-body">
+                    <form id="delete-book-form" action="" method="post">
+                        <div class="form-container">
+                            <div class="dialog-book-title">
+                                <input name="main-title" class="main-title" placeholder="Title" readonly>
+                            </div>
+                            <div class="dialog-book-subtitle">
+                                <input name="subtitle" class="subtitle" placeholder="Subtitle / Series (optional)"
+                                    readonly>
+                            </div>
+                            <div class="dialog-genre">
+                                <img src="images/book.png">
+                                <input name="genre" class="genre" readonly>
+                            </div>
+                            <div class="dialog-author">
+                                <input name="author" class="author" placeholder="Author" readonly>
+                            </div>
+                            <div class="dialog-pages">
+                                <input name="pages" class="pages" placeholder="Pages" type="number" readonly>
+                            </div>
+                            <div class="dialog-read">
+                                Read it?
+                                <input name="read" class="read" type="checkbox" readonly>
+                            </div>
+                            <div class="dialog-save-button">
+                                <button class="confirm-delete" type="submit">Yes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+
+        </div>
+        <div class="sidebar"></div>
+    </div>
+</body>
+
+</html>

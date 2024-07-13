@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.sidebar {
+    background-image: url("images/library.jpg");
+    filter: brightness(50%);
+    width: 12.5vw;
+    height: calc(100vh - 100px);
+    margin-left: 0;
+}
+
+.center-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+}
+
+#header-nav {
+    position: relative;
+    background-color: #111411;
+    box-shadow: 0px 8px 8px #0b0e0b;
+    z-index: 3;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.logo-container {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#new-book {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.page-container {
+    display: flex;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    background-color: #111411;
+}
+
+.library {
+    display: grid;
+    width: 70vw;
+    padding: 24px 0px;
+}
+
+.grid-template {
+    display: grid;
+    grid-template-columns: 16px auto 8fr minmax(64px, 3fr) minmax(52px, 1fr) minmax(52px, 1fr) minmax(52px, 1fr);
+    gap: 16px;
+}
+
+.grid-header {
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #666;
+}
+
+.book {
+    padding: 8px 0;
+}
+
+.book div {
+    display: flex;
+    align-items: center;
+}
+
+.book img {
+    padding: 0 8px;
+}
+
+.order-num {
+    justify-self: end;
+}
+
+.center-items {
+    justify-self: center;
+}
+
+.delete-button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
+.trash-icon {
+    width: 16px;
+    height: auto;
+}
+
+.title {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    white-space: nowrap;
+    overflow: scroll;
+    height: 38px;
+}
+
+.book .main-title {
+    font-weight: 600;
+}
+
+.read.true {
+    color: greenyellow;
+}
+
+.read.false {
+    color: red;
+}
+
+dialog {
+    color: white;
+    border-radius: 24px;
+    z-index: 10;
+    background-color: #1c201c;
+    width: 500px;
+    max-width: 80%;
+}
+
+.dialog-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.dialog-header .dialog-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.dialog-header .close-button {
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.dialog-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.6fr;
+    gap: 16px;
+}
+
+.dialog-book-title,
+.dialog-book-subtitle {
+    grid-column: span 3;
+}
+
+.dialog-genre {
+    display: flex;
+    gap: 8px;
+}
+
+.dialog-genre img {
+    height: 32px;
+}
+
+.dialog-read {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1.2rem;
+}
+
+.dialog-read input {
+    width: auto !important;
+}
+
+.dialog-save-button {
+    grid-column: 3 / 4;
+    padding: 10px 0;
+}
+
+.dialog-body .save-button,
+.confirm-delete {
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 16px;
+}
+
+.dialog-body input,
+.dialog-body select {
+    color: white;
+    background-color: #1c201c;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+}
